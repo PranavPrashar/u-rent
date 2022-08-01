@@ -15,6 +15,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/registration" component={RegistrationComponent} />
         <Route path="/listings/:city" component={CityListingPage} />
+        <Route path="/listingdetails/:listingID" exact component={"HomePage"} />
         <Route path="/" exact component={HomePage} />
       </Switch>
       {/* <form

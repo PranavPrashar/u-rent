@@ -7,6 +7,8 @@ export default class Login extends Component {
   state = {
     error: "",
     success: false,
+    failedAuth: false,
+    user: null,
   };
 
   handleSubmit = (event) => {
