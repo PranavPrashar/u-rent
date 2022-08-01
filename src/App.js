@@ -1,11 +1,22 @@
 import "./App.css";
-
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import RegistrationComponent from "./Components/RegistrationComponent/RegistrationComponent";
+import Login from "./Components/LoginPage/Login";
 import NavBar from "./Components/NavBar/NavBar";
+import HomePage from "./Components/HomePage/HomePage";
+import CityListingPage from "./Components/CityListingPage/CityListingPage";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <NavBar />
+
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route path="/registration" component={RegistrationComponent} />
+        <Route path="/listings/:city" component={CityListingPage} />
+        <Route path="/" exact component={HomePage} />
+      </Switch>
       {/* <form
         method="POST"
         action="http://localhost:5050/profile-upload-single"
@@ -18,9 +29,9 @@ function App() {
         <div>
           <input type="submit" value="Upload" />
         </div>
-      </form>
+      </form> */}
 
-      <form
+      {/* <form
         method="POST"
         action="http://localhost:5050/profile-upload-multiple"
         enctype="multipart/form-data"
@@ -33,7 +44,7 @@ function App() {
           <input type="submit" value="Upload" />
         </div>
       </form> */}
-    </div>
+    </BrowserRouter>
   );
 }
 

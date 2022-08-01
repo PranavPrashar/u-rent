@@ -1,0 +1,14 @@
+[
+  {
+    "city": "Toronto",
+    "image": "https://images.unsplash.com/photo-1507992781348-310259076fe0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    "city": "Hamilton",
+    "image": "https://images.unsplash.com/photo-1622041694554-2320126cb79d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+  },
+  {
+    "city": "Waterloo",
+    "image": "https://images.unsplash.com/photo-1622571451950-8d7b3fa342d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80"
+  }
+]

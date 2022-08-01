@@ -1,0 +1,14 @@
+@import "../../styles/typography";
+
+.homepage{
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 100%;
+&__heading{
+    font-family: $titilliumbeb-bold;
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+}
+

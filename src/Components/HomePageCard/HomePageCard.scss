@@ -1,0 +1,22 @@
+@import "../../styles/typography";
+.homepagecard{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+    padding:2rem;
+    margin: 1rem;
+    background-color: none ;
+    border-radius: 0;
+    text-decoration: none;
+    color: white;
+    font-family: $titilliumbeb-bold;
+    font-size: 3rem;
+    height: 10rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-blend-mode:color-burn;
+
+}
