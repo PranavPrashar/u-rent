@@ -57,7 +57,7 @@ class CityListingPage extends Component {
             console.log(listing);
             return (
               <NavLink
-                to={`/listingdetails/:${listing.listingID}`}
+                to={`/listingdetails/${listing.listingID}`}
                 className="citylistingpage__link"
               >
                 <CityListingDetails

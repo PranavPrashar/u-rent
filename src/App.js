@@ -5,6 +5,7 @@ import Login from "./Components/LoginPage/Login";
 import NavBar from "./Components/NavBar/NavBar";
 import HomePage from "./Components/HomePage/HomePage";
 import CityListingPage from "./Components/CityListingPage/CityListingPage";
+import ListingDetailsPage from "./Components/ListingDetailsPage/ListingDetailsPage";
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/registration" component={RegistrationComponent} />
         <Route path="/listings/:city" component={CityListingPage} />
-        <Route path="/listingdetails/:listingID" exact component={"HomePage"} />
+        <Route
+          path="/listingdetails/:listingID"
+          component={ListingDetailsPage}
+        />
         <Route path="/" exact component={HomePage} />
       </Switch>
       {/* <form
