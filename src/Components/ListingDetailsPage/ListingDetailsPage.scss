@@ -1,3 +1,5 @@
+@import "../../styles/typography";
+
 .listingdetailspage{
     display: flex;
     flex-direction: column;
@@ -9,6 +11,25 @@
 
     &__top{
         background-color: lightcoral;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &--heading{
+            padding: 0;
+            margin: 0;
+            font-family: $titilliumbeb-bold;
+            font-size: 2rem;
+        }
+        &--price{
+            padding: 0;
+            margin: 0;
+            font-family: $titilliumbeb-regular;
+        }
+        &--id{
+            padding: 0;
+            margin: 0;
+            font-family: $titilliumbeb-regular;
+        }
     }
 
     &__details{

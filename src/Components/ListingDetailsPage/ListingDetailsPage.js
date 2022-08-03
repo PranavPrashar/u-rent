@@ -43,8 +43,15 @@ class ListingDetailsPage extends Component {
     return (
       <div className="listingdetailspage">
         <div className="listingdetailspage__top">
-          <h1>{this.state.listingInfo?.listingAddress}</h1>
-          <h3>Listing Id {this.state.listingInfo?.listingID}</h3>
+          <h1 className="listingdetailspage__top--heading">
+            {this.state.listingInfo?.listingAddress}
+          </h1>
+          <p className="listingdetailspage__top--price">
+            ${this.state.listingInfo?.price}/Month
+          </p>
+          <p className="listingdetailspage__top--id">
+            Listing Id: {this.state.listingInfo?.listingID}
+          </p>
         </div>
 
         <Swiper
@@ -80,11 +87,15 @@ class ListingDetailsPage extends Component {
             <p>Listing Details</p>
           </div>
           <div>
-            <p>Listing City: </p>
-            <p># Bathrooms: </p>
-            <p># Bedrooms: </p>
-            <p># Bathrooms: </p>
-            <p>Square Feet: </p>
+            <p>Listing City:{this.state.listingInfo?.listingCity} </p>
+            <p># Bathrooms: {this.state.listingInfo?.listingBathrooms}</p>
+            <p># Bedrooms: {this.state.listingInfo?.listingBedrooms}</p>
+
+            <p>Square Feet: {this.state.listingInfo?.size}</p>
+          </div>
+          <div>
+            <h5>Listing Description</h5>
+            <p>{this.state.listingInfo?.listingDescription}</p>
           </div>
         </div>
       </div>

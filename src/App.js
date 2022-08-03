@@ -6,6 +6,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import HomePage from "./Components/HomePage/HomePage";
 import CityListingPage from "./Components/CityListingPage/CityListingPage";
 import ListingDetailsPage from "./Components/ListingDetailsPage/ListingDetailsPage";
+import UploadListingPage from "./Components/UploadListingPage/UploadListingPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           component={ListingDetailsPage}
         />
         <Route path="/" exact component={HomePage} />
+        <Route path="/uploadlisting" component={UploadListingPage} />
       </Switch>
       {/* <form
         method="POST"
