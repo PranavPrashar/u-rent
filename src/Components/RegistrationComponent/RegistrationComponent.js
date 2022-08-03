@@ -41,19 +41,27 @@ export default class RegistrationComponent extends Component {
         </h1>
         <form className="signup" onSubmit={this.handleSubmit}>
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" className="field__input" />
-          <label htmlFor="Username">Username</label>
           <input
             type="text"
+            id="name"
+            name="name"
+            className="field__input"
+            required
+          />
+          <label htmlFor="Username">Username</label>
+          <input
+            type="email"
             id="username"
             name="username"
             className="field__input"
+            required
           />
           <label htmlFor="password">Password</label>
           <input
             type="text"
             id="password"
             name="password"
+            required
             className="field__input"
           />
           <button className="signup__button">Sign Up</button>
