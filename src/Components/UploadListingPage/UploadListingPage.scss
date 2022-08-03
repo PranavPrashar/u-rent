@@ -1,0 +1,12 @@
+.uploadlistingpage{
+    display: flex;
+    flex-direction: column;
+
+    &__form{
+        background-color: lightpink;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
