@@ -7,7 +7,7 @@ class UploadListingPage extends Component {
     value: "toronto",
     size: "N/A",
     phoneNumber: "N/A",
-    email: "N/A",
+    // email: "N/A",
     user: null,
     // numberBedrooms: "",
     listingBathroom: "N/A",
@@ -48,8 +48,9 @@ class UploadListingPage extends Component {
         listingBathrooms: this.state.listingBathrooms,
         listingBedrooms: this.state.listingBedrooms,
         listingDescription: this.state.description,
-        email: this.state.user.email,
+        email: this.state.user.userName,
         phoneNumber: this.state.phoneNumber,
+        userId: this.state.user.userId,
 
         // listing,
       })
@@ -73,7 +74,11 @@ class UploadListingPage extends Component {
       })
       .then((response) => {
         console.log("User auth success", response.data);
-        this.setState({ user: response.data, failedAuth: false });
+        this.setState({
+          user: response.data,
+          failedAuth: false,
+          //   email: response.data.userName,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -126,7 +131,7 @@ class UploadListingPage extends Component {
             id="email"
             placeholder="please enter phone number "
             name="email"
-            value={this.state.user?.email}
+            value={this.state.user?.userName}
             onChange={this.handleInput}
           />
 
@@ -201,14 +206,6 @@ class UploadListingPage extends Component {
               N/A
             </option>
           </select>
-          {/* <input
-            type="text"
-            required
-            id="listingBedrooms"
-            name="listingBedrooms"
-            placeholder="please enter number of bathrooms"
-            onChange={this.handleInput}
-          /> */}
 
           <label htmlFor="listingBedrooms">Description about listing</label>
           <textarea
