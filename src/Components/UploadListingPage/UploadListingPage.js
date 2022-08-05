@@ -74,59 +74,7 @@ class UploadListingPage extends Component {
       });
     console.log(this.state.formData);
     console.log(this.state.value);
-
-    // axios
-    //   .post("http://localhost:5050/postlisting", {
-    //     listingPrice: this.state.listingPrice,
-    //     listingAddress: this.state.listingAddress,
-    //     listingCity: this.state.value,
-    //     listingSize: this.state.size,
-    //     listingBathrooms: this.state.listingBathrooms,
-    //     listingBedrooms: this.state.listingBedrooms,
-    //     listingDescription: this.state.description,
-    //     email: this.state.user.userName,
-    //     phoneNumber: this.state.phoneNumber,
-    //     userId: this.state.user.userId,
-    //     // listing,
-    //   })
-    //   .then((response) => {
-    //     console.log(response);
-    //   });
   };
-
-  //   handleSubmit = (event) => {
-  //     const data = {
-  //       listingPrice: this.state.listingPrice,
-  //       listingAddress: this.state.listingAddress,
-  //       listingCity: this.state.value,
-  //       listingSize: this.state.size,
-  //       listingBathrooms: this.state.listingBathrooms,
-  //       listingBedrooms: this.state.listingBedrooms,
-  //       listingDescription: this.state.description,
-  //       email: this.state.user.userName,
-  //       phoneNumber: this.state.phoneNumber,
-  //       userId: this.state.user.userId,
-  //     };
-  //     event.preventDefault();
-  //     const formData = new FormData();
-  //     formData.append("listingPrice", this.state.listingPrice);
-  //     for (const name in this.state) {
-  //       if (name === "fileState") {
-  //         for (let i = 0; i < this.state.fileState.length; i++) {
-  //           formData.append(name, this.state.fileState[i]);
-  //         }
-  //       }
-  //       formData.append(name, this.state[name]);
-  //     }
-  //     axios
-  //       .post("http://localhost:5050/postlisting", formData)
-  //       .then((response) => {
-  //         console.log(response.data);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //       });
-  //   };
 
   componentDidMount() {
     const authToken = sessionStorage.getItem("authToken");
@@ -161,7 +109,7 @@ class UploadListingPage extends Component {
   render() {
     return (
       <div className="uploadlistingpage">
-        <h1>Upload Your Listing</h1>
+        <h1 className="uploadlistingpage__header">Upload Your Listing</h1>
         <form
           className="uploadlistingpage__form"
           enctype="multipart/form-data"
@@ -290,18 +238,25 @@ class UploadListingPage extends Component {
             onChange={this.handleInput}
           />
 
-          <div>
-            <label>Upload multiple profile picture</label>
+          <div className="uploadlistingpage__upload">
+            <label className="uploadlistingpage__upload--label">
+              Upload multiple profile picture
+            </label>
             <input
               type="file"
               name="profileFiles"
               required
               multiple
               onChange={this.handleFileUpload}
+              className="uploadlistingpage__upload--input"
             />
           </div>
 
-          <input type="submit" value="Upload" />
+          <input
+            type="submit"
+            value="Upload"
+            className="uploadlistingpage__upload--submit"
+          />
         </form>
         {/* <form
         method="POST"
