@@ -116,7 +116,9 @@ class UploadListingPage extends Component {
           onSubmit={this.printResults}
         >
           <label htmlFor="listingAddress">Listing Address:</label>
-          <h6>Example : 123 Street Toronto Ontario [postalcode] </h6>
+          <h6 className="uploadlistingpage__example">
+            Example : 123 Street Toronto Ontario [postalcode]{" "}
+          </h6>
           <input
             type="text"
             required

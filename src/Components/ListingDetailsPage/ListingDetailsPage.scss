@@ -4,16 +4,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    font-family: $titilliumbeb-regular;
     &__image{
         width: 10%;
     }
+    
 
     &__top{
-        background-color: lightcoral;
+        // background-color: lightcoral;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 1rem 0;
         &--heading{
             padding: 0;
             margin: 0;
@@ -34,6 +36,21 @@
 
     &__details{
         background-color: lightgrey;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1rem;
+        &--heading{
+            padding:0;
+            margin: 0;
+            font-size: 2rem;
+            font-family: $titilliumbeb-bold;
+        }
+        &--headingsmall{
+            padding:0;
+            margin: 0;
+            font-size: 1.5rem;
+            font-family: $titilliumbeb-bold;
+        }
     }
 
     

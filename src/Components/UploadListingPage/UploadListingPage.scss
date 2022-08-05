@@ -5,6 +5,10 @@
     flex-direction: column;
     font-family: $titilliumbeb-regular;
 
+    &__example{
+        margin: 0;
+    }
+
     &__form {
         // background-color: lightpink;
         margin: 1rem;

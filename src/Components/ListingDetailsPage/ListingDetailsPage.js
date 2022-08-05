@@ -52,6 +52,15 @@ class ListingDetailsPage extends Component {
           <p className="listingdetailspage__top--id">
             Listing Id: {this.state.listingInfo?.listingID}
           </p>
+          <p className="listingdetailspage__top--id">
+            Contact Email: {this.state.listingInfo?.email}
+          </p>
+          <p className="listingdetailspage__top--id">
+            Contact Phone:{" "}
+            <a href={this.state.listingInfo?.phonenumber}>
+              {this.state.listingInfo?.phonenumber}
+            </a>
+          </p>
         </div>
 
         <Swiper
@@ -84,19 +93,27 @@ class ListingDetailsPage extends Component {
         </Swiper>
         <div className="listingdetailspage__details">
           <div>
-            <p>Listing Details</p>
+            <p className="listingdetailspage__details--heading">
+              Listing Details:
+            </p>
           </div>
           <div>
-            <p>Listing City:{this.state.listingInfo?.listingCity} </p>
+            <p>Listing City: {this.state.listingInfo?.listingCity} </p>
             <p># Bathrooms: {this.state.listingInfo?.listingBathrooms}</p>
             <p># Bedrooms: {this.state.listingInfo?.listingBedrooms}</p>
 
             <p>Square Feet: {this.state.listingInfo?.size}</p>
           </div>
           <div>
-            <h5>Listing Description</h5>
+            <h5 className="listingdetailspage__details--headingsmall">
+              Listing Description:
+            </h5>
             <p>{this.state.listingInfo?.listingDescription}</p>
           </div>
+        </div>
+
+        <div>
+          <p>MAP SECTION</p>
         </div>
       </div>
     );
