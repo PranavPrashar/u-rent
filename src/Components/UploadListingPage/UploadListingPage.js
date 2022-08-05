@@ -12,6 +12,7 @@ class UploadListingPage extends Component {
     // numberBedrooms: "",
     listingBathroom: "N/A",
     listingBedrooms: "N/A",
+    files: "",
     // numberBathrooms: "",
   };
   handleInput = (event) => {
@@ -35,29 +36,97 @@ class UploadListingPage extends Component {
     console.log(event.target.value);
     this.setState({ size: event.target.value });
   };
+
+  handleFileUpload = (event) => {
+    this.setState({ files: event.target.files });
+  };
   printResults = (event) => {
+    const headers = {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    };
+
     event.preventDefault();
+    const formData = new FormData();
+    formData.append("email", this.state.user?.userName);
+    formData.append("userId", this.state.user.userId);
+    formData.append("listingDescription", this.state.description);
+    formData.append("listingSize", this.state.size);
+    formData.append("listingCity", this.state.value);
+    for (const name in this.state) {
+      if (name === "files") {
+        for (let i = 0; i < this.state.files.length; i++) {
+          console.log(this.state.files[i]);
+          formData.append(name, this.state.files[i]);
+        }
+      }
+      formData.append(name, this.state[name]);
+    }
+
+    axios
+      .post("http://localhost:5050/postlisting", formData)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     console.log(this.state.formData);
     console.log(this.state.value);
-    axios
-      .post("http://localhost:5050/postlisting", {
-        listingPrice: this.state.listingPrice,
-        listingAddress: this.state.listingAddress,
-        listingCity: this.state.value,
-        listingSize: this.state.size,
-        listingBathrooms: this.state.listingBathrooms,
-        listingBedrooms: this.state.listingBedrooms,
-        listingDescription: this.state.description,
-        email: this.state.user.userName,
-        phoneNumber: this.state.phoneNumber,
-        userId: this.state.user.userId,
 
-        // listing,
-      })
-      .then((response) => {
-        console.log(response);
-      });
+    // axios
+    //   .post("http://localhost:5050/postlisting", {
+    //     listingPrice: this.state.listingPrice,
+    //     listingAddress: this.state.listingAddress,
+    //     listingCity: this.state.value,
+    //     listingSize: this.state.size,
+    //     listingBathrooms: this.state.listingBathrooms,
+    //     listingBedrooms: this.state.listingBedrooms,
+    //     listingDescription: this.state.description,
+    //     email: this.state.user.userName,
+    //     phoneNumber: this.state.phoneNumber,
+    //     userId: this.state.user.userId,
+    //     // listing,
+    //   })
+    //   .then((response) => {
+    //     console.log(response);
+    //   });
   };
+
+  //   handleSubmit = (event) => {
+  //     const data = {
+  //       listingPrice: this.state.listingPrice,
+  //       listingAddress: this.state.listingAddress,
+  //       listingCity: this.state.value,
+  //       listingSize: this.state.size,
+  //       listingBathrooms: this.state.listingBathrooms,
+  //       listingBedrooms: this.state.listingBedrooms,
+  //       listingDescription: this.state.description,
+  //       email: this.state.user.userName,
+  //       phoneNumber: this.state.phoneNumber,
+  //       userId: this.state.user.userId,
+  //     };
+  //     event.preventDefault();
+  //     const formData = new FormData();
+  //     formData.append("listingPrice", this.state.listingPrice);
+  //     for (const name in this.state) {
+  //       if (name === "fileState") {
+  //         for (let i = 0; i < this.state.fileState.length; i++) {
+  //           formData.append(name, this.state.fileState[i]);
+  //         }
+  //       }
+  //       formData.append(name, this.state[name]);
+  //     }
+  //     axios
+  //       .post("http://localhost:5050/postlisting", formData)
+  //       .then((response) => {
+  //         console.log(response.data);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   };
 
   componentDidMount() {
     const authToken = sessionStorage.getItem("authToken");
@@ -65,6 +134,8 @@ class UploadListingPage extends Component {
     if (!authToken) {
       this.setState({ failedAuth: true });
     }
+
+    const headers = {};
 
     axios
       .get("http://localhost:5050/current", {
@@ -93,7 +164,7 @@ class UploadListingPage extends Component {
         <h1>Upload Your Listing</h1>
         <form
           className="uploadlistingpage__form"
-          // method="POST" action="h"
+          enctype="multipart/form-data"
           onSubmit={this.printResults}
         >
           <label htmlFor="listingAddress">Listing Address:</label>
@@ -219,13 +290,17 @@ class UploadListingPage extends Component {
             onChange={this.handleInput}
           />
 
-          {/* <div>
-            <label>Upload multiple profile picture</label>
-            <input type="file" name="profile-files" required multiple />
-          </div>
           <div>
-           
-          </div> */}
+            <label>Upload multiple profile picture</label>
+            <input
+              type="file"
+              name="profileFiles"
+              required
+              multiple
+              onChange={this.handleFileUpload}
+            />
+          </div>
+
           <input type="submit" value="Upload" />
         </form>
         {/* <form
