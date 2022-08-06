@@ -8,6 +8,7 @@ import CityListingPage from "./Components/CityListingPage/CityListingPage";
 import ListingDetailsPage from "./Components/ListingDetailsPage/ListingDetailsPage";
 import UploadListingPage from "./Components/UploadListingPage/UploadListingPage";
 import UserListingComponent from "./Components/UserListingComponent/UserListingComponent";
+import EditListing from "./Components/EditListing/EditListing";
 import { Component } from "react";
 import axios from "axios";
 
@@ -129,6 +130,8 @@ class App extends Component {
               />
             )}
           />
+
+          <Route path="/editlisting/:listingId" component={EditListing} />
         </Switch>
       </BrowserRouter>
     );
