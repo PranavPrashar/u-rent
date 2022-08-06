@@ -61,7 +61,6 @@ class EditListing extends Component {
       )
       .then((response) => {
         console.log(response);
-        return <Redirect to="/" />;
       })
       .catch((error) => {
         console.log(error);
@@ -94,6 +93,10 @@ class EditListing extends Component {
       });
   }
   render() {
+    const redirectToReferrer = this.state.redirectToReferrer;
+    if (redirectToReferrer === true) {
+      <Redirect to="/" />;
+    }
     return (
       <div>
         <form
