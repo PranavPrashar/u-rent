@@ -7,7 +7,8 @@ import HomePage from "./Components/HomePage/HomePage";
 import CityListingPage from "./Components/CityListingPage/CityListingPage";
 import ListingDetailsPage from "./Components/ListingDetailsPage/ListingDetailsPage";
 import UploadListingPage from "./Components/UploadListingPage/UploadListingPage";
-import { Component, useState } from "react";
+import UserListingComponent from "./Components/UserListingComponent/UserListingComponent";
+import { Component } from "react";
 import axios from "axios";
 
 class App extends Component {
@@ -95,6 +96,7 @@ class App extends Component {
             <NavBar
               authToken={this.state.authToken}
               handleLogout={this.handleLogout}
+              user={this.state.user}
             />
           )}
         />
@@ -118,6 +120,15 @@ class App extends Component {
           />
           <Route path="/" exact component={HomePage} />
           <Route path="/uploadlisting" component={UploadListingPage} />
+          <Route
+            path="/mylistings/:userId"
+            component={(routerProps) => (
+              <UserListingComponent
+                user={this.state.user}
+                authToken={this.state.authToken}
+              />
+            )}
+          />
         </Switch>
       </BrowserRouter>
     );

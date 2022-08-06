@@ -1,0 +1,31 @@
+@import "../../styles/typography";
+
+.userlistingdetails{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 1rem 1rem;
+background-color: lightgrey;
+margin: 1rem 1rem;
+text-decoration: none;
+
+&__image{
+    height: 1.5rem;
+}
+
+&__right{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    &--city{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-transform: capitalize;
+        font-family: $titilliumbeb-regular;
+    }
+}
+}

@@ -71,11 +71,15 @@ class NavBar extends Component {
             <p className="navbar__right--text">Post Listing</p>
           </NavLink>
           <NavLink
-            className="navbar__right--login"
-            to={"/"}
+            className={
+              !this.props.authToken
+                ? "navbar__right--login hide"
+                : "navbar__right--login"
+            }
+            to={`/mylistings/${this.props.user?.userId}`}
             activeclassName="active"
           >
-            <p className="navbar__right--text">Home</p>
+            <p className="navbar__right--text">My Listings</p>
           </NavLink>
           <NavLink
             className="navbar__right--login"
