@@ -14,12 +14,16 @@ function CityListingDetails(props) {
           />
         </div>
         <div className="citylistingdetails__right">
-          <p className="citylistingdetails__right--city">{props.address}</p>
-          <p className="citylistingdetails__right--city">{props.id}</p>
-          <p className="citylistingdetails__right--city">${props.price}</p>
-          <p className="citylistingdetails__right--city">
-            <img src={chevron} alt="chevron" />
-          </p>
+          <div className="citylistingdetails__right--details">
+            <p className="citylistingdetails__right--city">{props.address}</p>
+            <p className="citylistingdetails__right--city">{props.id}</p>
+            <p className="citylistingdetails__right--city">${props.price}</p>
+          </div>
+          <div className="citylistingdetails__right--chevron">
+            {/* <p className="citylistingdetails__right--city"> */}
+            <img src={chevron} alt="chevron" className="chevron__img" />
+            {/* </p> */}
+          </div>
         </div>
       </div>
     </div>

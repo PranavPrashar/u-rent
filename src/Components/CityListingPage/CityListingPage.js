@@ -53,8 +53,14 @@ class CityListingPage extends Component {
           {this.props.match.params.city}
         </h1>
         <div>
+          {this.state.cityListings?.length < 1 && (
+            <p className="">
+              Currently there are no listings for
+              {" " + this.props.match.params.city + " "}
+              please check back later
+            </p>
+          )}
           {this.state.cityListings?.map((listing) => {
-            console.log(listing);
             return (
               <NavLink
                 to={`/listingdetails/${listing.listingID}`}
@@ -70,6 +76,22 @@ class CityListingPage extends Component {
                 />
               </NavLink>
             );
+
+            // return (
+            //   <NavLink
+            //     to={`/listingdetails/${listing.listingID}`}
+            //     className="citylistingpage__link"
+            //   >
+            //     <CityListingDetails
+            //       address={listing.listingAddress}
+            //       key={listing.listingID}
+            //       id={listing.listingID}
+            //       price={listing.price}
+            //       image={listing.listingImagePath}
+            //       className="citylistingpage__link"
+            //     />
+            //   </NavLink>
+            // );
           })}
         </div>
       </div>

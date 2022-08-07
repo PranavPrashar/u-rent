@@ -1,5 +1,21 @@
 @import "../../styles/typography";
 
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+
+
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+}
 .citylistingdetails{
 display: flex;
 flex-direction: row;
@@ -12,19 +28,67 @@ text-decoration: none;
 &__image{
     height: 4rem;
 }
+&__left{
+    @include tablet{
+    width: 10vw;
+    }
+}
 
 &__right{
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     flex-wrap: wrap;
+    margin: 0;
     justify-content: space-evenly;
+    @include tablet{
+        flex-direction: row;
+       
+    }
+
+    &--details{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: space-evenly;
+        @include tablet{
+            flex-direction: row;
+            justify-content: space-evenly;
+            // width: 100%;
+        }
+    }
+
+    &--chevron{
+        display: flex;
+        flex-direction: column;
+        width:50%;
+        // justify-content: flex-end;
+        @include tablet{
+            width: 20%;
+            flex-direction: row;
+        }
+    }
     &--city{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 0;
+        // width: 20%;
+        padding-left: 1rem;
         text-transform: capitalize;
         font-family: $titilliumbeb-regular;
+        @include tablet{
+
+        }
     }
 }
+}
+
+.chevron__img{
+    width: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }

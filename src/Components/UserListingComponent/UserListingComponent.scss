@@ -1,0 +1,13 @@
+@import "../../styles/typography";
+
+
+.citylistingpage__link{
+    text-decoration: none;
+}
+
+.userlistingcomponent{
+    &__header{
+        font-family: $titilliumbeb-regular;
+        padding-left: 1rem;
+    }
+}

@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { Component } from "react";
 import UserListingDetails from "../UserListingDetails/UserListingDetails";
+import { NavLink } from "react-router-dom";
+import "./UserListingComponent.scss";
 
 export default class UserListingComponent extends Component {
   state = {
@@ -22,22 +24,27 @@ export default class UserListingComponent extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>
+      <div className="userlistingcomponent">
+        <h1 className="userlistingcomponent__header">
           Welcome {this.props.user?.name}, here are some of your listings:
         </h1>
         {/* dont forget the case they dont have anylistings */}
         {/* <UserListingDetails /> */}
         {this.state.listings.map((listing) => {
           return (
-            <UserListingDetails
-              address={listing.listingAddress}
-              key={listing.listingID}
-              id={listing.listingID}
-              price={listing.price}
-              image={listing.listingImagePath}
+            <NavLink
+              to={`/listingdetails/${listing.listingID}`}
               className="citylistingpage__link"
-            />
+            >
+              <UserListingDetails
+                address={listing.listingAddress}
+                key={listing.listingID}
+                id={listing.listingID}
+                price={listing.price}
+                image={listing.listingImagePath}
+                className="citylistingpage__link"
+              />
+            </NavLink>
           );
         })}
       </div>
