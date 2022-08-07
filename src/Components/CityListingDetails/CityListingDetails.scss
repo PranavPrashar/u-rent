@@ -27,10 +27,17 @@ text-decoration: none;
 
 &__image{
     height: 4rem;
+    width: 100%;
+
+    @include tablet{
+        height: 8rem;
+    }
+
 }
 &__left{
+    width: 50vw;
     @include tablet{
-    width: 10vw;
+    width: 20vw;
     }
 }
 
