@@ -81,13 +81,14 @@ class ListingDetailsPage extends Component {
           modules={[Autoplay, Pagination, Navigation]}
           className="listingdetailspage__swiper"
         >
-          {this.state.imagesArray?.map((image) => {
+          {this.state.imagesArray?.map((image, index) => {
             return (
               <SwiperSlide>
                 <img
                   src={image.listingImagePath}
                   alt="alt "
                   className="listingdetailspage__image"
+                  key={index}
                 />
               </SwiperSlide>
             );

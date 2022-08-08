@@ -10,6 +10,40 @@ class FavouriteComponent extends Component {
     failedAuth: false,
     user: null,
     authToken: null,
+    favouriteArray: null,
+  };
+
+  handleFavourite = () => {
+    // console.log(this.state.favouriteArray);
+    const postInfo = {
+      userID: this.state.user?.userId,
+      listingID: this.props.listingID,
+    };
+    // console.log(postInfo);
+    //this.state.favouriteArray.length !== 0 ||
+    if (this.state.favouriteState) {
+      console.log("the size is greater than 1");
+      axios
+        .post("http://localhost:5050/deleteFavourite", postInfo)
+        .then((response) => {
+          console.log(response);
+          this.setState({ favouriteState: false });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      console.log("The size is less than 1 nothing found");
+      axios
+        .post("http://localhost:5050/addFavourite", postInfo)
+        .then((response) => {
+          this.setState({ favouriteState: true });
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
   componentDidMount() {
     // console.log(this.props.listingID);
@@ -39,8 +73,15 @@ class FavouriteComponent extends Component {
               `http://localhost:5050/favouriteCheck/${this.props.listingID}`,
               result
             )
-            .then((reponse) => {
-              console.log(reponse.data);
+            .then((response) => {
+              console.log(response.data);
+              this.setState({ favouriteArray: response.data });
+              return response.data;
+            })
+            .then((response) => {
+              if (response.length >= 1) {
+                this.setState({ favouriteState: true });
+              }
             })
             .catch((error) => {
               console.log(error);
@@ -54,17 +95,21 @@ class FavouriteComponent extends Component {
   }
   render() {
     return (
-      <div className="favouritecomponent">
+      <div className="favouritecomponent" onClick={this.handleFavourite}>
         <div className="favouritecomponent__container">
           <div className="favouritecomponent__container--image">
             <img
-              src={blackHeart}
+              src={this.state.favouriteState ? redHeart : blackHeart}
               alt="favourite component logo"
               className="favouritecomponent__container--image"
             />
           </div>
           {/* The text below this is going to change depending on if favourited or not */}
-          <div>Favourite this listing</div>
+          <div>
+            {this.state.favouriteState
+              ? "Listing Favourited"
+              : "Favourite this listing"}
+          </div>
         </div>
       </div>
     );
