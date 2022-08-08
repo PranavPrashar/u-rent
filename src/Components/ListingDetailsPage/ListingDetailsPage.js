@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ListingDetailsPage.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
+import FavouriteComponent from "../FavouriteComponent/FavouriteComponent";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -42,6 +43,9 @@ class ListingDetailsPage extends Component {
     console.log(this.state.listingInfo);
     return (
       <div className="listingdetailspage">
+        <div>
+          <FavouriteComponent listingID={this.props.match.params.listingID} />
+        </div>
         <div className="listingdetailspage__top">
           <h1 className="listingdetailspage__top--heading">
             {this.state.listingInfo?.listingAddress}
