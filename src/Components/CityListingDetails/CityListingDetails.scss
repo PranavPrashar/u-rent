@@ -24,6 +24,9 @@ padding: 1rem 1rem;
 background-color: lightgrey;
 margin: 1rem 1rem;
 text-decoration: none;
+@include tablet{
+    
+}
 
 &__image{
     height: 4rem;
@@ -31,6 +34,10 @@ text-decoration: none;
 
     @include tablet{
         height: 8rem;
+    }
+
+    @include desktop{
+        height: 10rem;
     }
 
 }
@@ -85,9 +92,13 @@ text-decoration: none;
         // width: 20%;
         padding-left: 1rem;
         text-transform: capitalize;
-        font-family: $titilliumbeb-regular;
+        font-family: $titilliumbeb-bold;
+        color:#34495e;
         @include tablet{
-
+            font-size: 1.5rem;
+        }
+        @include desktop{
+            font-size: 1.8rem;
         }
     }
 }
@@ -98,4 +109,7 @@ text-decoration: none;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    @include tablet{
+        width: 3rem;
+    }
 }

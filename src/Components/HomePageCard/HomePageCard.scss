@@ -37,9 +37,11 @@
 
     @include tablet{
         width: 20%;
+        height: 15rem;
         font-size: 2rem;
     }
     @include desktop{
         font-size: 3rem;
+        height: 20rem;
     }
 }
