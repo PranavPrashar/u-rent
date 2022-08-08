@@ -54,7 +54,7 @@ class CityListingPage extends Component {
         </h1>
         <div>
           {this.state.cityListings?.length < 1 && (
-            <p className="">
+            <p className="citylistingpage__nolistings">
               Currently there are no listings for
               {" " + this.props.match.params.city + " "}
               please check back later

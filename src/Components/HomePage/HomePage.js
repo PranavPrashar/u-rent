@@ -39,11 +39,13 @@ class HomePage extends Component {
       <div className="homepage">
         {/* <NavBar /> */}
         <h1 className="homepage__heading">URent Cities</h1>
-        {cityJson.map((city, index) => {
-          return (
-            <HomePageCard name={city.city} image={city.image} key={index} />
-          );
-        })}
+        <div className="homepage__cards">
+          {cityJson.map((city, index) => {
+            return (
+              <HomePageCard name={city.city} image={city.image} key={index} />
+            );
+          })}
+        </div>
       </div>
     );
   }

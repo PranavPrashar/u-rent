@@ -1,4 +1,20 @@
+
 @import "../../styles/typography";
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
 .homepagecard{
     display: flex;
     flex-direction: row;
@@ -19,4 +35,11 @@
     background-size: cover;
     // background-blend-mode:color-burn;
 
+    @include tablet{
+        width: 20%;
+        font-size: 2rem;
+    }
+    @include desktop{
+        font-size: 3rem;
+    }
 }
