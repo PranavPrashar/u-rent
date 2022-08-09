@@ -1,5 +1,18 @@
 @import "../../styles/typography";
 
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+
+
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
 .listingdetailspage{
     display: flex;
     flex-direction: column;
@@ -21,29 +34,43 @@
             margin: 0;
             font-family: $titilliumbeb-bold;
             font-size: 2rem;
+            @include tablet{
+                font-size: 3rem;
+            }
         }
         &--price{
             padding: 0;
             margin: 0;
             font-family: $titilliumbeb-regular;
+            font-size: 1.6rem;
         }
         &--id{
             padding: 0;
             margin: 0;
             font-family: $titilliumbeb-regular;
+            font-size: 1.6rem;
         }
     }
 
     &__details{
-        background-color: lightgrey;
+        background-color: #bdc3c7;
         display: flex;
         flex-direction: column;
         padding: 2rem 1rem;
+        margin:  1rem 1rem ;
+
+        @include tablet{
+            margin: 1rem 6rem;
+        }
         &--heading{
             padding:0;
             margin: 0;
             font-size: 2rem;
             font-family: $titilliumbeb-bold;
+            @include tablet{
+                font-size: 2.2rem;
+            }
+            
         }
         &--headingsmall{
             padding:0;
@@ -54,6 +81,14 @@
         &--paragraph{
             font-family: $titilliumbeb-regular;
             font-size: 1.2rem;
+            font-style: italic;
+            @include tablet{
+                font-size: 1.6rem;
+            }
+        }
+        &--span{
+            font-weight: 600;
+            font-style: normal;   
         }
     }
 
@@ -85,4 +120,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .description{
+    background-color: white;
+    padding: 1rem 0;
   }
