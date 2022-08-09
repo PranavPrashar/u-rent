@@ -96,7 +96,14 @@ class FavouriteComponent extends Component {
   render() {
     return (
       <div className="favouritecomponent" onClick={this.handleFavourite}>
-        <div className="favouritecomponent__container">
+        <div
+          // className="favouritecomponent__container favouriteColor"
+          className={
+            this.state.favouriteState
+              ? "favouritecomponent__container favouriteColor"
+              : "favouritecomponent__container"
+          }
+        >
           <div className="favouritecomponent__container--image">
             <img
               src={this.state.favouriteState ? redHeart : blackHeart}
