@@ -103,9 +103,15 @@ class ListingDetailsPage extends Component {
             </p>
           </div>
           <div>
-            <p>Listing City: {this.state.listingInfo?.listingCity} </p>
-            <p># Bathrooms: {this.state.listingInfo?.listingBathrooms}</p>
-            <p># Bedrooms: {this.state.listingInfo?.listingBedrooms}</p>
+            <p className="listingdetailspage__details--paragraph">
+              Listing City: {this.state.listingInfo?.listingCity}{" "}
+            </p>
+            <p className="listingdetailspage__details--paragraph">
+              # Bathrooms: {this.state.listingInfo?.listingBathrooms}
+            </p>
+            <p className="listingdetailspage__details--paragraph">
+              # Bedrooms: {this.state.listingInfo?.listingBedrooms}
+            </p>
 
             <p>Square Feet: {this.state.listingInfo?.size}</p>
           </div>
