@@ -3,7 +3,7 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "../../capstone-frontend/src/assets/images/Screen Shot 2022-08-06 at 3.52.28 PM.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },

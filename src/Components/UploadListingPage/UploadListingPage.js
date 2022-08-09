@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./UploadListingPage.scss";
 import axios from "axios";
+import { NavLink, Redirect, Link } from "react-router-dom";
 class UploadListingPage extends Component {
   state = {
     formData: [],
@@ -68,6 +69,7 @@ class UploadListingPage extends Component {
       .post("http://localhost:5050/postlisting", formData)
       .then((response) => {
         console.log(response.data);
+        this.props.history.push(`/`);
       })
       .catch((error) => {
         console.log(error);

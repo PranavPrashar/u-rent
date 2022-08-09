@@ -117,7 +117,14 @@ class App extends Component {
           <Route path="/listings/:city" component={CityListingPage} />
           <Route
             path="/listingdetails/:listingID"
-            component={ListingDetailsPage}
+            // component={ListingDetailsPage}
+            component={(routerProps) => (
+              <ListingDetailsPage
+                user={this.state.user}
+                authToken={this.state.authToken}
+                {...routerProps}
+              />
+            )}
           />
           <Route path="/" exact component={HomePage} />
           <Route path="/uploadlisting" component={UploadListingPage} />
@@ -131,7 +138,18 @@ class App extends Component {
             )}
           />
 
-          <Route path="/editlisting/:listingId" component={EditListing} />
+          <Route
+            path="/editlisting/:listingId"
+            // component={EditListing}
+            component={(routerProps) => (
+              <EditListing
+                // props={routerProps}
+                user={this.state.user}
+                authToken={this.state.authToken}
+                {...routerProps}
+              />
+            )}
+          />
         </Switch>
       </BrowserRouter>
     );

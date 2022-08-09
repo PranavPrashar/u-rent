@@ -13,14 +13,20 @@ class ListingDetailsPage extends Component {
   state = {
     listingInfo: null,
     imagesArray: null,
+    userInfo: null,
   };
   componentDidMount() {
+    console.log(this.props.user);
     const listingId = this.props.match.params.listingID;
 
     axios
       .get(`http://localhost:5050/listings/singleListing/${listingId}`)
       .then((response) => {
-        this.setState({ listingInfo: response.data[0] });
+        this.setState({
+          listingInfo: response.data[0],
+          userInfo: this.props.user,
+        });
+
         console.log(response.data);
       })
       .catch((error) => {
@@ -44,7 +50,11 @@ class ListingDetailsPage extends Component {
     return (
       <div className="listingdetailspage">
         <div>
-          <FavouriteComponent listingID={this.props.match.params.listingID} />
+          {this.state.userInfo ? (
+            <FavouriteComponent listingID={this.props.match.params.listingID} />
+          ) : (
+            <p></p>
+          )}
         </div>
         <div className="listingdetailspage__top">
           <h1 className="listingdetailspage__top--heading">

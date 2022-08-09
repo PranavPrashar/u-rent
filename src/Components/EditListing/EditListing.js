@@ -61,6 +61,9 @@ class EditListing extends Component {
       )
       .then((response) => {
         console.log(response);
+        console.log(this?.props.user.userId);
+        // <Redirect to={`/mylistings/${this.props.user.userId}`} />;
+        this.props.history.push(`/mylistings/${this.props.user.userId}`);
       })
       .catch((error) => {
         console.log(error);

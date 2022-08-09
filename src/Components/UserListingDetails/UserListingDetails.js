@@ -31,26 +31,6 @@ function UserListingDetails(props) {
           <p className="userlistingdetails__right--city">{props.address}</p>
           <p className="userlistingdetails__right--city">{props.id}</p>
           <p className="userlistingdetails__right--city">${props.price}</p>
-
-          {/* <NavLink to={`/editlisting/${props.id}`}>
-            <div className="userlistingdetails__right--city">
-              <img
-                src={edit}
-                alt="edit icon"
-                className="userlistingdetails__icon"
-              />
-            </div>
-          </NavLink>
-          <div className="userlistingdetails__right--city">
-            <img
-              src={deleteIcon}
-              alt="edit icon"
-              className="userlistingdetails__icon"
-              onClick={handleDelete}
-            />
-          </div> */}
-
-          {/* <p className="userlistingdetails__right--city"></p> */}
         </div>
         <div className="userlistingdetails__bottom">
           <NavLink to={`/editlisting/${props.id}`}>
