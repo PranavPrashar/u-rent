@@ -3,6 +3,7 @@ import "./ListingDetailsPage.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import FavouriteComponent from "../FavouriteComponent/FavouriteComponent";
+import mapImage from "../../assets/images/map.png";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -149,8 +150,9 @@ class ListingDetailsPage extends Component {
           </div>
         </div>
 
-        <div>
-          <p>MAP SECTION</p>
+        <div className="listingdetailspage__map--container">
+          <p className="listingdetailspage__map--header">MAP SECTION</p>
+          <img src={mapImage} alt="Map" className="listingdetailspage__map" />
         </div>
       </div>
     );

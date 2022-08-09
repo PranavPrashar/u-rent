@@ -21,6 +21,41 @@
     &__image{
         width: 10%;
     }
+
+    &__map{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 2rem;
+
+    @include tablet{
+        // width: 60%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    &--header{
+        padding: 0;
+        padding-left: 1rem;
+            margin: 0;
+            font-family: $titilliumbeb-bold;
+            font-size: 2rem;
+            @include tablet{
+                font-size: 3rem;
+            }
+    }
+    &--container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    }
     
 
     &__top{
