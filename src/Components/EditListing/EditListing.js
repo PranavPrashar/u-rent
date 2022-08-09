@@ -104,7 +104,12 @@ class EditListing extends Component {
           enctype="multipart/form-data"
           onSubmit={this.handleSubmit}
         >
-          <label htmlFor="listingPrice">Price:</label>
+          <label
+            htmlFor="listingPrice"
+            className="uploadlistingpage__form--label"
+          >
+            Price:
+          </label>
           <input
             type="text"
             required
@@ -112,36 +117,69 @@ class EditListing extends Component {
             placeholder="please enter listing price "
             name="listingPrice"
             onChange={this.handleInput}
+            className="uploadlistingpage__form--input"
             value={this.state.listingPrice}
           />
-          <label htmlFor="phoneNumber">Phone Number:</label>
+          <label
+            htmlFor="phoneNumber"
+            className="uploadlistingpage__form--label"
+          >
+            Phone Number:
+          </label>
           <input
             type="tel"
             id="phoneNumber"
             placeholder="please enter phone number "
             name="phoneNumber"
             value={this.state.listingPhoneNumber}
+            className="uploadlistingpage__form--input"
             onChange={this.handlephoneNumber}
           />
 
-          <label htmlFor="listingCity">Listing City:</label>
+          <label
+            htmlFor="listingCity"
+            className="uploadlistingpage__form--label"
+          >
+            Listing City:
+          </label>
           <select
             id="listingCity"
             onChange={this.handleSelectCity}
             required
+            className="uploadlistingpage__form--select"
             value={this.state.listingCity}
           >
-            <option value="toronto">Toronto</option>
-            <option value="waterloo">Waterloo</option>
-            <option value="northyork">North York</option>
-            <option value="vaughan">Vaughan</option>
+            <option value="toronto" className="uploadlistingpage__form--select">
+              Toronto
+            </option>
+            <option
+              value="waterloo"
+              className="uploadlistingpage__form--select"
+            >
+              Waterloo
+            </option>
+            <option
+              value="northyork"
+              className="uploadlistingpage__form--select"
+            >
+              North York
+            </option>
+            <option value="vaughan" className="uploadlistingpage__form--select">
+              Vaughan
+            </option>
           </select>
 
-          <label htmlFor="listingCity">Size of Listing:</label>
+          <label
+            htmlFor="listingCity"
+            className="uploadlistingpage__form--label"
+          >
+            Size of Listing:
+          </label>
           <select
             id="listingSize"
             value={this.state.listingSize}
             onChange={this.handleSelectSize}
+            className="uploadlistingpage__form--select"
             required
           >
             <option value="around 500">around 500</option>
@@ -151,12 +189,18 @@ class EditListing extends Component {
             <option value="N/A">N/A</option>
           </select>
 
-          <label htmlFor="listingBathrooms">Number of Bedrooms</label>
+          <label
+            htmlFor="listingBathrooms"
+            className="uploadlistingpage__form--label"
+          >
+            Number of Bedrooms
+          </label>
           <select
             id="listingBathrooms"
             onChange={this.handleSelectBedrooms}
             name="listingBathrooms"
             value={this.state.listingBedrooms}
+            className="uploadlistingpage__form--select"
             required
           >
             <option value="1">1</option>
@@ -168,12 +212,18 @@ class EditListing extends Component {
             </option>
           </select>
 
-          <label htmlFor="listingBedrooms">Number of Bathrooms</label>
+          <label
+            htmlFor="listingBedrooms"
+            className="uploadlistingpage__form--label"
+          >
+            Number of Bathrooms
+          </label>
 
           <select
             id="listingBedrooms"
             value={this.state.listingBathrooms}
             onChange={this.handleSelectBathrooms}
+            className="uploadlistingpage__form--select"
             name="listingBedrooms"
             required
           >
@@ -186,7 +236,12 @@ class EditListing extends Component {
             </option>
           </select>
 
-          <label htmlFor="listingBedrooms">Description about listing</label>
+          <label
+            htmlFor="listingBedrooms"
+            className="uploadlistingpage__form--label"
+          >
+            Description about listing
+          </label>
           <textarea
             type="text"
             required
@@ -196,12 +251,13 @@ class EditListing extends Component {
             rows={3}
             name="description"
             value={this.state.listingDescription}
+            className="uploadlistingpage__form--textarea"
             onChange={this.handleInput}
           />
 
           <input
             type="submit"
-            value="Upload"
+            value="Update"
             className="uploadlistingpage__upload--submit"
           />
         </form>
