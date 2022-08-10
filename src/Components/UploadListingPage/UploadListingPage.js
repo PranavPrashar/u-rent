@@ -5,6 +5,7 @@ import { NavLink, Redirect, Link } from "react-router-dom";
 class UploadListingPage extends Component {
   state = {
     formData: [],
+    error: "",
     value: "toronto",
     size: "N/A",
     phoneNumber: "N/A",
@@ -69,7 +70,7 @@ class UploadListingPage extends Component {
       .post("http://localhost:5050/postlisting", formData)
       .then((response) => {
         console.log(response.data);
-        this.props.history.push(`/`);
+        this.props.history.push(`mylistings/${this.state.user.userId}`);
       })
       .catch((error) => {
         console.log(error);
@@ -309,6 +310,7 @@ class UploadListingPage extends Component {
               className="uploadlistingpage__upload--input"
             />
           </div>
+          <p>{this.state.error}</p>
 
           <input
             type="submit"

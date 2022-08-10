@@ -7,6 +7,7 @@ import "./UserListingComponent.scss";
 export default class UserListingComponent extends Component {
   state = {
     listings: [],
+    user: null,
   };
   componentDidMount() {
     let user = this.props.user?.userId;
@@ -16,7 +17,10 @@ export default class UserListingComponent extends Component {
       .then((response) => {
         // console.log(user);
         // console.log(response.data);
-        this.setState({ listings: response.data });
+        this.setState({
+          listings: response.data,
+          user: this.props.user?.userId,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -42,6 +46,7 @@ export default class UserListingComponent extends Component {
                 id={listing.listingID}
                 price={listing.price}
                 image={listing.listingImagePath}
+                user={this.state.user}
                 className="citylistingpage__link"
               />
             </NavLink>

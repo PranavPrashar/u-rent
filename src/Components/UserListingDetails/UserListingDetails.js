@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import deleteIcon from "../../assets/icons/delete-svgrepo-com.svg";
 import edit from "../../assets/icons/wrench-svgrepo-com.svg";
 import "./UserListingDetails.scss";
@@ -42,14 +42,16 @@ function UserListingDetails(props) {
               />
             </div>
           </NavLink>
-          <div className="userlistingdetails__right--city">
-            <img
-              src={deleteIcon}
-              alt="edit icon"
-              className="userlistingdetails__icon"
-              onClick={handleDelete}
-            />
-          </div>
+          <NavLink to={`/`}>
+            <div className="userlistingdetails__right--city">
+              <img
+                src={deleteIcon}
+                alt="edit icon"
+                className="userlistingdetails__icon"
+                onClick={handleDelete}
+              />
+            </div>
+          </NavLink>
         </div>
       </div>
     </div>
