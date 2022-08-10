@@ -117,7 +117,12 @@ class UploadListingPage extends Component {
           enctype="multipart/form-data"
           onSubmit={this.printResults}
         >
-          <label htmlFor="listingAddress">Listing Address:</label>
+          <label
+            htmlFor="listingAddress"
+            className="uploadlistingpage__upload--label"
+          >
+            Listing Address:
+          </label>
           <h6 className="uploadlistingpage__example">
             Example : 123 Street Toronto Ontario [postalcode]{" "}
           </h6>
@@ -128,9 +133,15 @@ class UploadListingPage extends Component {
             placeholder="please enter listing address including postal code and city "
             name="listingAddress"
             onChange={this.handleInput}
+            className="uploadlistingpage__upload--input"
           />
 
-          <label htmlFor="listingPrice">Price:</label>
+          <label
+            htmlFor="listingPrice"
+            className="uploadlistingpage__upload--label"
+          >
+            Price:
+          </label>
           <input
             type="text"
             required
@@ -138,17 +149,26 @@ class UploadListingPage extends Component {
             placeholder="please enter listing price "
             name="listingPrice"
             onChange={this.handleInput}
+            className="uploadlistingpage__upload--input"
           />
-          <label htmlFor="phoneNumber">Phone Number:</label>
+          <label
+            htmlFor="phoneNumber"
+            className="uploadlistingpage__upload--label"
+          >
+            Phone Number:
+          </label>
           <input
             type="tel"
             id="phoneNumber"
             placeholder="please enter phone number "
             name="phoneNumber"
             onChange={this.handleInput}
+            className="uploadlistingpage__upload--input"
           />
 
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" className="uploadlistingpage__upload--label">
+            Email:
+          </label>
           <input
             type="email"
             id="email"
@@ -156,14 +176,21 @@ class UploadListingPage extends Component {
             name="email"
             value={this.state.user?.userName}
             onChange={this.handleInput}
+            className="uploadlistingpage__upload--input"
           />
 
-          <label htmlFor="listingCity">Listing City:</label>
+          <label
+            htmlFor="listingCity"
+            className="uploadlistingpage__upload--label"
+          >
+            Listing City:
+          </label>
           <select
             id="listingCity"
             value={this.state.value}
             onChange={this.handleSelectCity}
             required
+            className="uploadlistingpage__upload--select"
           >
             <option value="toronto">Toronto</option>
             <option value="waterloo">Waterloo</option>
@@ -171,12 +198,18 @@ class UploadListingPage extends Component {
             <option value="vaughan">Vaughan</option>
           </select>
 
-          <label htmlFor="listingCity">Size of Listing:</label>
+          <label
+            htmlFor="listingCity"
+            className="uploadlistingpage__upload--label"
+          >
+            Size of Listing:
+          </label>
           <select
             id="listingSize"
             value={this.state.size}
             onChange={this.handleSelectSize}
             required
+            className="uploadlistingpage__upload--select"
           >
             <option value="around 500">around 500</option>
             <option value="500 to 750">500 to 750"</option>
@@ -196,12 +229,18 @@ class UploadListingPage extends Component {
             name="listingSize"
             onChange={this.handleInput}
           /> */}
-          <label htmlFor="listingBathrooms">Number of Bedrooms</label>
+          <label
+            htmlFor="listingBathrooms"
+            className="uploadlistingpage__upload--label"
+          >
+            Number of Bedrooms
+          </label>
           <select
             id="listingBathrooms"
             onChange={this.handleSelectBedrooms}
             name="listingBathrooms"
             required
+            className="uploadlistingpage__upload--select"
           >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -212,7 +251,12 @@ class UploadListingPage extends Component {
             </option>
           </select>
 
-          <label htmlFor="listingBedrooms">Number of Bathrooms</label>
+          <label
+            htmlFor="listingBedrooms"
+            className="uploadlistingpage__upload--label"
+          >
+            Number of Bathrooms
+          </label>
 
           <select
             id="listingBedrooms"
@@ -220,6 +264,7 @@ class UploadListingPage extends Component {
             onChange={this.handleSelectBathrooms}
             name="listingBedrooms"
             required
+            className="uploadlistingpage__upload--select"
           >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -230,7 +275,12 @@ class UploadListingPage extends Component {
             </option>
           </select>
 
-          <label htmlFor="listingBedrooms">Description about listing</label>
+          <label
+            htmlFor="listingBedrooms"
+            className="uploadlistingpage__upload--label"
+          >
+            Description about listing
+          </label>
           <textarea
             type="text"
             required
@@ -240,6 +290,7 @@ class UploadListingPage extends Component {
             rows={3}
             name="description"
             onChange={this.handleInput}
+            className="uploadlistingpage__upload--textarea"
           />
 
           <div className="uploadlistingpage__upload">
@@ -258,7 +309,7 @@ class UploadListingPage extends Component {
 
           <input
             type="submit"
-            value="Upload"
+            value="Post Listing"
             className="uploadlistingpage__upload--submit"
           />
         </form>

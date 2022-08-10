@@ -31,17 +31,38 @@
         &--label{
             display: flex;
             flex-direction: row;
+            font-family: $titilliumbeb-bold;
+            font-size: 1.5rem;
         }
+        &--textarea{
+            font-family:$titilliumbeb-regular ;
+            font-size: 1.2rem;
+        }
+        &--select{
+            line-height: 2rem;
+            font-family:$titilliumbeb-regular ;
+            padding: 0.3rem 0;
+            font-size: 1.2rem;
+
+        }
+
         &--input{
             display: flex;
             flex-direction: row;
             justify-content: center;
+            height: 2rem;
+            font-size: 1.2rem;
+            font-family:$titilliumbeb-regular ;
         }
 
         &--submit{
+            font-family: $titilliumbeb-bold;
+            font-size: 1.2rem;
+            color: #ecf0f1;
             padding:1rem 2rem;
+            margin-top:1rem ;
             border: none;
-            border-radius: 3px;
+            border-radius: 10px;
             background-color: lightblue;
         }
     }
