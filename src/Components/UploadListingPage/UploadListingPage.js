@@ -196,6 +196,9 @@ class UploadListingPage extends Component {
             <option value="waterloo">Waterloo</option>
             <option value="northyork">North York</option>
             <option value="vaughan">Vaughan</option>
+            <option value="hamilton">Hamilton</option>
+            <option value="guelph">Guelph</option>
+            <option value="windsor">Windsor</option>
           </select>
 
           <label
