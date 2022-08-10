@@ -1,70 +1,96 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# U-Rent READ.ME
 
-## Available Scripts
+U-Rent, allows Canadian university students to find rental properties for the upcoming year in 
+addition to contact information about the corresponding list as well as favorite listings which they might like. 
+The platform also gives landlords a platform for listings, allowing both students and landlords to have a great 
+platform to find but also post properties and rentals
 
-In the project directory, you can run:
+# Backend Github Repository
 
-### `npm start`
+https://github.com/PranavPrashar/urent-backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Deployment Frontend
 
-### `npm run build`
+To deploy this project run
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  cd into capstone-frontend
+```
+```bash
+  npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Users can register and login for an account, being authenticated through the use of JWT
+- Create Listing
+- Read/View Listings
+- Update Listings
+- Delte Listings
+- Users can also favoruite listings which they might want to view later
+- Users can see past listings which they have posted 
+- View Details about listings
+- See listings based on city, for example; Toronto, Waterloo, Guelph, London .....more to come
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Tech Stack
 
-## Learn More
+**Client:** React, Scss
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Server:** Node, Express, Multer Js, Knex.js, Cloudinary
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Database:** MySQL
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Lessons Learned
 
-### Analyzing the Bundle Size
+Through this experience and project, some things I learned include:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+How to brainstorm and plan out a project and its various stages, should i start with my frontend end first and then develop endpoints or vice versa. For example, what kinds of endpoints should be developed, and what data should I be sending. 
 
-### Making a Progressive Web App
+Planning my database schema to have primary and foreign keys to help reference things like the user's favorite listings or images for each listing. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+As well as working with libraries such as Multer, and Knex.js. This project was the first time I had to handle both form data but also files that a user is uploading. This was done through reading documentation and lots of problem-solving. 
 
-### Advanced Configuration
+This project also taught me how to authenticate users using JWT authentication and authorizing only certain groups such as Registered/Logged in users to be able to use certain parts of the application 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Next Steps
+- Develop Dynamic map for each listing allowing users to see where the listing is located
+- Integrate transit view allowing users to see routes and near by transportation access
+- Forum for users to post if they are looking for a roommate 
+- Chat function to get in contact with the landlord, allowing all converstations and info in one central location
 
-### Deployment
+## Screenshots
+#### Mobile Home Page:
+![Mobile Home Page](https://i.imgur.com/PFAcEQ7.png)
+#### Tablet/Desktop Home Page
+![Tablet/Desktop Home Page](https://i.imgur.com/xiO1L6z.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+#### Edit Listing Screen
+![Edit Listing Screen](https://i.imgur.com/tt3H4iS.png)
+#### My Listings Page
+![Tablet/Desktop Home Page](https://i.imgur.com/zgq7wp2.png)
+#### Upload Listing page with Multer Image upload
+![Upload Listing page with Multer Image upload](https://i.imgur.com/j0nv3ei.png)
+#### Example Property listing details page
+![Upload Listing page with Multer Image upload](https://i.imgur.com/KcGEkQS.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+#### Example Property listing details Mobile
+![Upload Listing page with Multer Image upload](https://i.imgur.com/dcDd0at.png)
+
+
+
+
+
