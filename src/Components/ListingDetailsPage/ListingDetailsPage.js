@@ -17,7 +17,7 @@ class ListingDetailsPage extends Component {
     userInfo: null,
   };
   componentDidMount() {
-    console.log(this.props.user);
+    // console.log(this.props.user);
     const listingId = this.props.match.params.listingID;
 
     axios
@@ -28,7 +28,7 @@ class ListingDetailsPage extends Component {
           userInfo: this.props.user,
         });
 
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -43,11 +43,8 @@ class ListingDetailsPage extends Component {
       .catch((error) => {
         console.log(error);
       });
-
-    console.log(listingId);
   }
   render() {
-    console.log(this.state.listingInfo);
     return (
       <div className="listingdetailspage">
         <div>
@@ -94,7 +91,7 @@ class ListingDetailsPage extends Component {
         >
           {this.state.imagesArray?.map((image, index) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <img
                   src={image.listingImagePath}
                   alt="alt "

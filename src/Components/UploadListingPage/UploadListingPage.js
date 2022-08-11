@@ -19,8 +19,6 @@ class UploadListingPage extends Component {
   };
   handleInput = (event) => {
     this.setState({ [event.target.name]: event.target.value });
-    console.log(event.target.value);
-    // console.log("Form Data ", event.target.name);
   };
 
   handleSelectCity = (event) => {
@@ -95,7 +93,7 @@ class UploadListingPage extends Component {
         },
       })
       .then((response) => {
-        console.log("User auth success", response.data);
+        // console.log("User auth success", response.data);
         this.setState({
           user: response.data,
           failedAuth: false,
@@ -178,6 +176,7 @@ class UploadListingPage extends Component {
             value={this.state.user?.userName}
             onChange={this.handleInput}
             className="uploadlistingpage__upload--input"
+            disabled
           />
 
           <label
@@ -318,32 +317,6 @@ class UploadListingPage extends Component {
             className="uploadlistingpage__upload--submit"
           />
         </form>
-        {/* <form
-        method="POST"
-        action="http://localhost:5050/profile-upload-single"
-        enctype="multipart/form-data"
-      >
-        <div>
-          <label>Upload profile picture</label>
-          <input type="file" name="profile-file" required />
-        </div>
-        <div>
-          <input type="submit" value="Upload" />
-        </div>
-      </form> */}
-        {/* <form
-          method="POST"
-          action="http://localhost:5050/profile-upload-multiple"
-          enctype="multipart/form-data"
-        >
-          <div>
-            <label>Upload multiple profile picture</label>
-            <input type="file" name="profile-files" required multiple />
-          </div>
-          <div>
-            <input type="submit" value="Upload" />
-          </div>
-        </form> */}
       </div>
     );
   }

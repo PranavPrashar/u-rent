@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./RegistrationComponent.scss";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 export default class RegistrationComponent extends Component {
@@ -25,6 +26,11 @@ export default class RegistrationComponent extends Component {
           success: true,
           error: "",
         });
+        console.log("Testing");
+        this.props.history.push("/login");
+      })
+      .then(() => {
+        // this.props.history.push("/login");
       })
       .catch((error) => {
         this.setState({
@@ -64,7 +70,9 @@ export default class RegistrationComponent extends Component {
             required
             className="field__input"
           />
+          {/* <NavLink to={"/login"}> */}
           <button className="signup__button">Sign Up</button>
+          {/* </NavLink> */}
         </form>
 
         {/* Success message */}

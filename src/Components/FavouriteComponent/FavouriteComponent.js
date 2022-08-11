@@ -59,7 +59,7 @@ class FavouriteComponent extends Component {
           },
         })
         .then((response) => {
-          console.log("User auth success", response.data);
+          // console.log("User auth success", response.data);
           this.setState({
             user: response.data,
             failedAuth: false,
@@ -74,7 +74,7 @@ class FavouriteComponent extends Component {
               result
             )
             .then((response) => {
-              console.log(response.data);
+              // console.log(response.data);
               this.setState({ favouriteArray: response.data });
               return response.data;
             })

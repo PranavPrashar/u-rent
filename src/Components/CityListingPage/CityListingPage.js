@@ -10,9 +10,7 @@ class CityListingPage extends Component {
   };
 
   componentDidMount() {
-    console.log("HIT");
     const city = this.props.match.params.city;
-    console.log(city);
     const authToken = sessionStorage.getItem("authToken");
 
     if (!authToken) {
@@ -26,11 +24,11 @@ class CityListingPage extends Component {
         },
       })
       .then((response) => {
-        console.log("User auth success", response.data);
+        // console.log("User auth success", response.data);
         this.setState({ user: response.data, failedAuth: false });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         this.setState({ failedAuth: true });
       });
 
@@ -60,11 +58,12 @@ class CityListingPage extends Component {
               please check back later
             </p>
           )}
-          {this.state.cityListings?.map((listing) => {
+          {this.state.cityListings?.map((listing, index) => {
             return (
               <NavLink
                 to={`/listingdetails/${listing.listingID}`}
                 className="citylistingpage__link"
+                key={index}
               >
                 <CityListingDetails
                   address={listing.listingAddress}
@@ -76,22 +75,6 @@ class CityListingPage extends Component {
                 />
               </NavLink>
             );
-
-            // return (
-            //   <NavLink
-            //     to={`/listingdetails/${listing.listingID}`}
-            //     className="citylistingpage__link"
-            //   >
-            //     <CityListingDetails
-            //       address={listing.listingAddress}
-            //       key={listing.listingID}
-            //       id={listing.listingID}
-            //       price={listing.price}
-            //       image={listing.listingImagePath}
-            //       className="citylistingpage__link"
-            //     />
-            //   </NavLink>
-            // );
           })}
         </div>
       </div>

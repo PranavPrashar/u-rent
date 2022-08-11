@@ -7,11 +7,10 @@ import "./UserListingDetails.scss";
 
 function UserListingDetails(props) {
   const handleDelete = () => {
-    console.log(props.id);
     axios
       .delete(`http://localhost:5050/deletelisting/${props.id}`)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
       })
       .catch((error) => {
         console.log(error);

@@ -39,7 +39,6 @@ class App extends Component {
       password: form.password.value,
     };
 
-    console.log(loginInformation);
     axios
       .post("http://localhost:5050/login", loginInformation)
       .then((response) => {
@@ -73,7 +72,7 @@ class App extends Component {
           },
         })
         .then((response) => {
-          console.log("User auth success", response.data);
+          // console.log("User auth success", response.data);
           this.setState({
             user: response.data,
             failedAuth: false,

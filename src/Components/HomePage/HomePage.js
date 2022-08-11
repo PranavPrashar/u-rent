@@ -26,11 +26,10 @@ class HomePage extends Component {
         },
       })
       .then((response) => {
-        console.log("User auth success", response.data);
         this.setState({ user: response.data, failedAuth: false });
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         this.setState({ failedAuth: true });
       });
   }

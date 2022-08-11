@@ -15,8 +15,6 @@ export default class UserListingComponent extends Component {
     axios
       .get(`http://localhost:5050/mylistings/${user}`)
       .then((response) => {
-        // console.log(user);
-        // console.log(response.data);
         this.setState({
           listings: response.data,
           user: this.props.user?.userId,
@@ -32,8 +30,6 @@ export default class UserListingComponent extends Component {
         <h1 className="userlistingcomponent__header">
           Welcome {this.props.user?.name}, here are some of your listings:
         </h1>
-        {/* dont forget the case they dont have anylistings */}
-        {/* <UserListingDetails /> */}
         {this.state.listings.map((listing) => {
           return (
             <NavLink
