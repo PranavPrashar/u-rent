@@ -22,9 +22,6 @@ To deploy this project run
 ```
 
 ```bash
-  cd into capstone-frontend
-```
-```bash
   npm start
 ```
 
